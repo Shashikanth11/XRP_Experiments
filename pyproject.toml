@@ -1,0 +1,68 @@
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "XRP_Experiments"
+version = "0.0.1"
+description = "A short description of the project."
+authors = [
+  { name = "Niketh" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+
+
+dependencies = [
+    "loguru (==0.7.3)",
+    "pip",
+    "python-dotenv (==1.1.1)",
+    "ruff",
+    "tqdm",
+    "typer",
+    "numpy (>=1.26,<3.0)",
+    "pandas (==2.2.2)",
+    "scikit-learn (==1.5.1)",
+    "joblib (==1.4.2)",
+    "xgboost (==2.1.0)",
+    "lightgbm (==4.4.0)",
+    "hyperopt (==0.2.7)",
+    "lime (==0.2.0.1)",
+    "wandb (==0.17.4)",
+    "matplotlib (>=3.10.6,<4.0.0)",
+    "seaborn (==0.13.2)",
+    "requests-cache (>=1.2.1,<2.0.0)",
+    "retry-requests (>=2.0.0,<3.0.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "shash (>=0.2.1,<0.3.0)",
+    "catboost (>=1.2.8,<2.0.0)",
+    "statsmodels (>=0.14.5,<0.15.0)",
+    "eda-assist (>=1.5,<2.0)",
+]
+
+
+requires-python = "==3.11.4"
+
+[[tool.poetry.source]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+priority = "supplemental"
+
+
+[tool.ruff]
+line-length = 99
+src = ["XRP_Experiments"]
+include = ["pyproject.toml", "XRP_Experiments/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["XRP_Experiments"]
+force-sort-within-sections = true
+
+
